@@ -24,20 +24,27 @@ def ingreso_viajero():
                 print('Solo puede ser un minimo de 1 destino o maximo 5')
 
         for j in range(1, cantidad_destinos+1):
-            print(f'Ingrese los datos del {i} destino')
+            print(f'Ingrese los datos del {j} destino')
             n_destino = input('Ingrese el numero de destino segun el mapa: ')
             nombre_destino = input('Ingrese el nombre del destino: ')
             clientes[codigo]["destinos"][n_destino] = {
                 "nombre_lugar" : nombre_destino
             }
-def mostrar_viajeros(codigos):
-    if not codigos:
-        return 0 #Aqui es donde finaliza el diccionario
-    codigo_unico = codigos[0] #se extrae el primer codigo del diccionario y luego se vuelve a referenciar
+
+
+def mostrar_viajeros(llaves):
+    if not llaves:
+        return  #Aqui es donde finaliza el diccionario
+    codigo_unico = llaves[0] #se extrae el primer codigo del diccionario y luego se vuelve a referenciar
     tmp = clientes[codigo_unico] #este cliente es temporal y debe tener los datos del primer cliente
+
     print(f'\nCodigo: {codigo_unico}')
     print(f'Cliente: {tmp["nombre"]}')
-    for
+    print('Destinos: ')
+    for llave, valor in tmp["destinos"].items(): #se accede al cliente temporal
+        print(f'Destino: {valor["nombre_lugar"]}')
+
+    mostrar_viajeros(llaves[1:])
 
 
 
@@ -53,7 +60,7 @@ while fin_menu:
             ingreso_viajero()
         case 2:
 
-            mostrar_viajeros(clientes.items())
+            mostrar_viajeros(clientes.keys())
 
         case 3:
             print('Gracias por usar el sistema')
