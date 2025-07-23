@@ -35,7 +35,9 @@ def mostrar_viajeros(codigos):
         return 0 #Aqui es donde finaliza el diccionario
     codigo_unico = codigos[0] #se extrae el primer codigo del diccionario y luego se vuelve a referenciar
     tmp = clientes[codigo_unico] #este cliente es temporal y debe tener los datos del primer cliente
-
+    print(f'\nCodigo: {codigo_unico}')
+    print(f'Cliente: {tmp["nombre"]}')
+    for
 
 
 
