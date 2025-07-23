@@ -60,7 +60,7 @@ while fin_menu:
             ingreso_viajero()
         case 2:
 
-            mostrar_viajeros(clientes.keys())
+            mostrar_viajeros(list(clientes.keys()))
 
         case 3:
             print('Gracias por usar el sistema')
