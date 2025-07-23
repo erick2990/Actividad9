@@ -10,26 +10,25 @@ def ingreso_viajero():
         print(f'Ingrese datos del {i} viajer@: ')
         codigo = input('Ingrese el codigo del cliente: ')
         clientes[codigo] = {
-
-            ["nombre"] = input('Ingrese el nombre del cliente: ')
+              "nombre" :  input('Ingrese el nombre del cliente: '),
+              "destinos" : {}
         }
-        clientes[codigo]["destinos"] = [] #"lista vacia de viajes"
+
         paso  = True
         while paso:
             cantidad_destinos = int(input('Ingrese la lista de destinos turisticos minimo 1 maximo 5: '))
             if 1<=cantidad_destinos<=5:
                 paso = False
                 break
-            elif cantidad_destinos<0:
-                print('Si no hay destinos entonces no se puede guardar el registro vuelva a intentarlo...')
-            elif cantidad_destinos>5:
+            else:
                 print('Solo puede ser un minimo de 1 destino o maximo 5')
 
         for j in range(1, cantidad_destinos+1):
             print(f'Ingrese los datos del {i} destino')
+            n_destino = input('Ingrese el numero de destino segun el mapa: ')
             nombre_destino = input('Ingrese el nombre del destino: ')
-            clientes[codigo]["destinos"] = {
-                "destino" : nombre_destino
+            clientes[codigo]["destinos"][n_destino] = {
+                "nombre_lugar" : nombre_destino
             }
 
 
