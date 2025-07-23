@@ -30,6 +30,13 @@ def ingreso_viajero():
             clientes[codigo]["destinos"][n_destino] = {
                 "nombre_lugar" : nombre_destino
             }
+def mostrar_viajeros(codigos):
+    if not codigos:
+        return 0 #Aqui es donde finaliza el diccionario
+    codigo_unico = codigos[0] #se extrae el primer codigo del diccionario y luego se vuelve a referenciar
+    tmp = clientes[codigo_unico] #este cliente es temporal y debe tener los datos del primer cliente
+
+
 
 
 
@@ -43,8 +50,8 @@ while fin_menu:
         case 1:
             ingreso_viajero()
         case 2:
-            print('ola')
-            #mostrar_viajero()
+
+            mostrar_viajeros(clientes.items())
 
         case 3:
             print('Gracias por usar el sistema')
